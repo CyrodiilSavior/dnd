@@ -1,5 +1,5 @@
 import type { Position } from 'css-box-model';
-import { moveByWindowScroll, guard } from '../action-creators';
+import { guard } from '../action-creators';
 import type { Middleware } from '../store-types';
 import getScrollListener from '../../view/scroll-listener';
 
@@ -12,7 +12,7 @@ const shouldStop = (action: unknown) =>
 const scrollListener: Middleware = (store) => {
   const listener = getScrollListener({
     onWindowScroll: (newScroll: Position) => {
-      store.dispatch(moveByWindowScroll({ newScroll }));
+      console.log("Dont do anything")
     },
   });
 
